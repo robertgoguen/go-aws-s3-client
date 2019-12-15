@@ -1,2 +1,13 @@
-# go-aws-s3-client
-Simple aws s3 client, using go
+# aws-go-s3-client
+
+## A Simple AWS S3 Client, written in Golang
+
+### Requires aws-cli
+* apt-get -y update
+* apt-get -y upgrade
+*
+* apt-get install -y python3-pip
+* pip3 install awscli
+* 
+* aws --version
+* aws-cli/1.14.48 Python/3.5.2 Linux/4.13.0-36-generic botocore/1.9.1
