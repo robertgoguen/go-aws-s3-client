@@ -8,10 +8,7 @@
 #
 # Example:  ./create_s3_bucket.sh mybucket customer-1 /tmp/testfiledir
 # 
-# Purpose: This script is intended to be used to do *manual* end-to-end Unit Testing of Argos.
-# It is not intended to replace end-to-end Blackbox Testing, but can be used by developers
-# to test changes they are making to Argos *before* the BBT has been updated to support those
-# changes.
+# Purpose: This script is intended to be used to do *manual* end-to-end Unit Testing of aws using localstack to simulate aws services
 #
 # create the S3 bucket
 
