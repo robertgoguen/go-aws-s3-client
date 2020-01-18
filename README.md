@@ -7,7 +7,14 @@
 * apt-get -y upgrade
 *
 * apt-get install -y python3-pip
+*
+* python3 -m venv env
+*
+* source ./env/bin/activate
+*
 * pip3 install awscli
-* 
-* aws --version
-* aws-cli/1.14.48 Python/3.5.2 Linux/4.13.0-36-generic botocore/1.9.1
+*
+* pip3 install localstack
+*
+* SERVICES=sqs,sns,s3,lambda DEBUG=1 localstack start
+

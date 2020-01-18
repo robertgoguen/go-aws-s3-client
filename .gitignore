@@ -1,3 +1,4 @@
 *~
 vendor
-aws-go-client
+go-aws-s3-client
+env/

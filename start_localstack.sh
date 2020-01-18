@@ -7,6 +7,4 @@ export AWS_SECRET_ACCESS_KEY=foobar
 export AWS_SDK_LOAD_CONFIG=1
 export LOGLEVEL=debug
 
-export SERVICES=s3
-
-/usr/bin/docker run --rm --name localstack --rm -e SERVICES="s3" -p 4576:4576 -v "/tmp/localstack:/tmp/localstack" -e HOST_TMP_FOLDER="/tmp/localstack" localstack/localstack
+SERVICES=sqs,sns,s3,lambda DEBUG=1 localstack start
