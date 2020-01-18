@@ -17,6 +17,7 @@ func main() {
 		DisableRestProtocolURICleaning: aws.Bool(true),
 		Endpoint:                       aws.String(os.Args[1]),
 	}))
+
 	//		LogLevel:                       aws.LogLevel(aws.LogDebugWithHTTPBody),
 
 	u, _ := url.Parse(os.Args[2])
@@ -25,15 +26,19 @@ func main() {
 	path = path[1:]
 
 	fmt.Printf("bucket: %s path: %s\n", bucket, path)
+
 	svc := s3.New(sess)
+
 	params := &s3.ListObjectsInput{
 		Bucket: aws.String(bucket),
 		Prefix: aws.String(path),
 	}
+
 	resp, err := svc.ListObjects(params)
 
 	if err != nil {
 		fmt.Printf("sv.ListObjects err: %s\n", err)
+		os.Exit(1)
 	}
 	if resp.Delimiter != nil {
 		fmt.Printf("Delimiter: %s\n", *resp.Delimiter)
