@@ -1,0 +1,56 @@
+# Turn off bell
+
+# setup for ahc development
+export SERVICES=sqs,s3
+export AWS_DEFAULT_REGION=us-east-1
+export AWS_REGION=us-east-1
+export AWS_ACCESS_KEY_ID=foobar
+export AWS_SECRET_ACCESS_KEY=foobar
+export AWS_SDK_LOAD_CONFIG=1
+export LOGLEVEL=debug
+
+export DEV_DIR=${HOME}/src
+alias cds='cd $DEV_DIR'
+
+function go-aws-s3-client {
+  export PS1="\[\e]0;\u@\h:(go-aws-s3-client) \w\a\]\u@\h:\W$ "
+  export GO111MODULE=on
+  export TOP_DIR=$DEV_DIR/go-aws-s3-client
+  export GOPATH=$TOP_DIR/go
+  export GOPATH_SRC=$GOPATH/src
+  export GOBIN=$GOPATH/bin
+  export MASTER_DIR=$GOPATH_SRC/github.com/robertgoguen/go-aws-s3-client
+  export CSCOPE_DIR=$GOPATH_SRC/
+  export PATH="$GOBIN:$PATH"
+  export PATH="~/.local/bin:$PATH"
+  alias mkg='git clone https://github.com/robertgoguen/go-aws-s3-client.git $MASTER_DIR'
+  alias fo='(cd $MASTER_DIR; find.original .)'
+  alias cdt='cd $TOP_DIR'
+  alias cdm='cd $MASTER_DIR'
+  alias cdgo='cd $GOPATH_SRC'
+  alias cdcscope='cd $CSCOPE_DIR'
+  alias remacs='run_emacs go-aws-s3-client'
+  export KUBECONFIG="$HOME/.kube/config"
+}
+
+function aws-sqs-go-client {
+  export PS1="\[\e]0;\u@\h:(aws-sqs-go-client) \w\a\]\u@\h:\W$ "
+  export GO111MODULE=on
+  export TOP_DIR=$DEV_DIR/aws-sqs-go-client
+  export GOPATH=$TOP_DIR/go
+  export GOPATH_SRC=$GOPATH/src
+  export GOBIN=$GOPATH/bin
+  export MASTER_DIR=$GOPATH_SRC/wwwin-github.cisco.com/robertgoguen/aws-sqs-go-client
+  export CSCOPE_DIR=$GOPATH_SRC/
+  export PATH="$GOBIN:$PATH"
+  export PATH="~/.local/bin:$PATH"
+  alias mkg='git clone https://wwwin-github.cisco.com/robertgoguen/aws-sqs-go-client.git $MASTER_DIR'
+  alias fo='(cd $MASTER_DIR; find.original .)'
+  alias cdt='cd $TOP_DIR'
+  alias cdm='cd $MASTER_DIR'
+  alias cdgo='cd $GOPATH_SRC'
+  alias cdcscope='cd $CSCOPE_DIR'
+  alias remacs='run_emacs aws-sqs-go-client'
+  export KUBECONFIG="$HOME/.kube/config"
+}
+
