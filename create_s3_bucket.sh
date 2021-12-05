@@ -12,14 +12,16 @@
 #
 # create the S3 bucket
 
-aws --endpoint-url=http://localhost:4572 s3 mb s3://$1
-aws --endpoint-url=http://localhost:4572 s3 ls 
+aws --endpoint-url=http://localhost:4566 s3 mb s3://$1
+aws --endpoint-url=http://localhost:4566 s3 ls 
 
 # copy files into S3 bucket
 files=$3/*
 for file in ${files}; do
     printf "file: %s\n" $file
-    aws --endpoint-url=http://localhost:4572 s3 cp $file s3://$1/$2/
+    echo "aws --endpoint-url=http://localhost:4566 s3 cp $file s3://$1/$2/"
+    aws --endpoint-url=http://localhost:4566 s3 cp $file s3://$1/$2/
 done
-aws --endpoint-url=http://localhost:4572 s3 ls s3://$1 --recursive
+echo "aws --endpoint-url=http://localhost:4566 s3 ls s3://$1 --recursive"
+aws --endpoint-url=http://localhost:4566 s3 ls s3://$1 --recursive
 
