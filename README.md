@@ -22,6 +22,6 @@
 *
 * source ./env/bin/activate
 * source ./env.sh
-* ./create_s3_bucket.sh mybucket customer-1 $PWD/data
+* ./create_s3_bucket.sh mybucket customer-1 $PWD/data 4566
 * go run main.go http://127.0.0.1:4566 s3://mybucket/customer-1/f1
 * go run main.go http://127.0.0.1:4566 s3://mybucket/customer-1/f2
